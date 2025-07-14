@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <title>Product Information</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th> ProductId </th>
+                <th> Name </th>
+                <th> Description </th>
+                <th> Price </th>
+                <th> Quantity </th>
+                <th> UserId </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${products.empty}">
+                <td colspan="2"> No product found </td>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td><span th:text="${product.productId}"> ProductId </span></td>
+                <td><span th:text="${product.name}"> Name </span></td>
+                <td><span th:text="${product.description}"> Description </span></td>
+                <td><span th:text="${product.price}"> Price </span></td>
+                <td><span th:text="${product.quantity}"> Quantity </span></td>
+                <td><span th:text="${product.userId}"> UserId </span></td>
+            </tr>
+        </tbody>
+    </table>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out" />
+    </form>
+</body>
+
+</html>
