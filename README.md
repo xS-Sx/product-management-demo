@@ -5,3 +5,4 @@
 - https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/index.html#servlet-authentication-unpwd
 - https://spring.io/guides/gs/serving-web-content
 - https://www.baeldung.com/thymeleaf-list
+- https://www.baeldung.com/spring-boot-crud-thymeleaf
