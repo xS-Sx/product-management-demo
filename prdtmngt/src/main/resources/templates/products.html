@@ -9,33 +9,18 @@
 <body>
     <form action="#" th:action="@{/products}" th:object="${editProduct}" method="post">
         <fieldset>
-            <input type="submit" id="submitButton" th:value="Save">
+            <input type="submit" id="submitButton" th:value="Submit">
             <input type="reset" id="resetButton" name="reset" th:value="Reset" />
-            <table>
-                <thead>
-                    <tr>
-                        <th> ProductId </th>
-                        <th> Name </th>
-                        <th> Description </th>
-                        <th> Price </th>
-                        <th> Quantity </th>
-                        <th> UserId </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="book, itemStat : *{books}">
-                        <td><input th:field="*{books[__${itemStat.index}__].productId}" /></td>
-                        <td><input th:field="*{books[__${itemStat.index}__].name}" /></td>
-                        <td><input th:field="*{books[__${itemStat.index}__].description}" /></td>
-                        <td><input th:field="*{books[__${itemStat.index}__].price}" /></td>
-                        <td><input th:field="*{books[__${itemStat.index}__].quantity}" /></td>
-                        <td><input th:field="*{books[__${itemStat.index}__].userId}" /></td>
-
-                    </tr>
-                </tbody>
-            </table>
+            <!-- <div><label>ProductId <input th:field="*{productId}" /></label></div> -->
+            <div><label>Name <input th:field="*{name}" /></label></div>
+            <div><label>Description <input th:field="*{description}" /></label></div>
+            <div><label>Price <input th:field="*{price}" /></label></div>
+            <div><label>Quantity <input th:field="*{quantity}" /></label></div>
+            <div><label>UserId <input th:field="*{userId}" readonly="readonly"/></label></div>
         </fieldset>
     </form>
+    <br />
+    <br />
     <table>
         <thead>
             <tr>
@@ -58,6 +43,8 @@
                 <td><span th:text="${product.price}"> Price </span></td>
                 <td><span th:text="${product.quantity}"> Quantity </span></td>
                 <td><span th:text="${product.userId}"> UserId </span></td>
+                <td></td>
+                <td><a th:href="@{/products/delete/{productId}(productId=${product.productId})}">Delete</a></td>
             </tr>
         </tbody>
     </table>

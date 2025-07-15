@@ -1,10 +1,10 @@
-package com.xss.prdtmngt;
+package com.xss.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PrdtmngtApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
