@@ -1,4 +1,4 @@
-package com.xss.prdtmngt;
+package com.xss.demo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

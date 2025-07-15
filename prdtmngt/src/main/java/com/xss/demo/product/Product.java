@@ -1,4 +1,4 @@
-package com.xss.prdtmngt;
+package com.xss.demo.product;
 
 public record Product(
         String productId, String name, String description,
